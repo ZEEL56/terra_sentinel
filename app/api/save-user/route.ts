@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { Prisma } from "@prisma/client";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+
 type SaveUserPayload = {
   email: string;
   name: string | null;
