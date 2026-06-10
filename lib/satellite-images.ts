@@ -1,0 +1,14 @@
+/** Shared satellite preview URLs (SVG placeholders) used by report and gallery. */
+export function getSatellitePreviewUrl(
+  sensor: 'Sentinel-1' | 'Sentinel-2' | 'RISAT'
+): string {
+  const images: Record<string, string> = {
+    'Sentinel-2':
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Cdefs%3E%3CradialGradient id='earth' cx='40%25' cy='30%25' r='60%25'%3E%3Cstop offset='0%25' style='stop-color:%234CAF50'/%3E%3Cstop offset='40%25' style='stop-color:%232196F3'/%3E%3Cstop offset='100%25' style='stop-color:%231565C0'/%3E%3C/radialGradient%3E%3Cpattern id='clouds' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='20' cy='20' r='15' fill='white' opacity='0.3'/%3E%3Ccircle cx='70' cy='40' r='10' fill='white' opacity='0.2'/%3E%3Ccircle cx='50' cy='70' r='20' fill='white' opacity='0.25'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23earth)'/%3E%3Crect width='800' height='600' fill='url(%23clouds)' opacity='0.6'/%3E%3C/svg%3E",
+    'Sentinel-1':
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='radar' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23333'/%3E%3Cstop offset='50%25' style='stop-color:%23666'/%3E%3Cstop offset='100%25' style='stop-color:%23444'/%3E%3C/linearGradient%3E%3Cpattern id='texture' x='0' y='0' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Crect width='40' height='40' fill='%23333'/%3E%3Ccircle cx='10' cy='10' r='3' fill='%23666' opacity='0.5'/%3E%3Ccircle cx='30' cy='20' r='2' fill='%23888' opacity='0.3'/%3E%3Ccircle cx='20' cy='30' r='4' fill='%23444' opacity='0.4'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23radar)'/%3E%3Crect width='800' height='600' fill='url(%23texture)' opacity='0.7'/%3E%3C/svg%3E",
+    RISAT:
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Cdefs%3E%3CradialGradient id='sar' cx='50%25' cy='50%25' r='70%25'%3E%3Cstop offset='0%25' style='stop-color:%23888'/%3E%3Cstop offset='60%25' style='stop-color:%23555'/%3E%3Cstop offset='100%25' style='stop-color:%23222'/%3E%3C/radialGradient%3E%3Cpattern id='sar-texture' x='0' y='0' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cellipse cx='30' cy='30' rx='25' ry='15' fill='%23666' opacity='0.3' transform='rotate(45 30 30)'/%3E%3Cellipse cx='10' cy='50' rx='20' ry='10' fill='%23444' opacity='0.4' transform='rotate(-30 10 50)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23sar)'/%3E%3Crect width='800' height='600' fill='url(%23sar-texture)' opacity='0.8'/%3E%3C/svg%3E",
+  }
+  return images[sensor]
+}
