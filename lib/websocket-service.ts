@@ -142,6 +142,9 @@ export const SATELLITE_SOURCES = {
 }
 
 // Singleton instance
-export const satelliteWebSocket = new SatelliteWebSocketService('ws://localhost:8080/satellite-stream')
+const wsUrl =
+  process.env.NEXT_PUBLIC_WS_URL ?? 'ws://localhost:8080/satellite-stream'
+
+export const satelliteWebSocket = new SatelliteWebSocketService(wsUrl)
 
 export default SatelliteWebSocketService
